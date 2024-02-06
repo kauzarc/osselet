@@ -3,10 +3,6 @@ import GamePage from "./GamePage.js";
 
 const socket = io();
 
-socket.on("button clicked", (id) => {
-    console.log(`${id} clicked button`);
-});
-
 function App() {
     return (
         <HomePage />
@@ -16,7 +12,7 @@ function App() {
         <GamePage />
     );
 
-    
+
     // return (<div>
     //     <h1>Hello, world !</h1>
     //     <button onClick={() => { socket.emit("button clicked") }}>

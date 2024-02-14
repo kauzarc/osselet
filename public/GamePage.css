@@ -24,6 +24,9 @@ header {
 .non-clickable {
     pointer-events: none;
 }
+.clickable {
+    /* pointer-events: moi; */
+}
 
 .logo {
     max-width: 450px;

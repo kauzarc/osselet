@@ -225,7 +225,7 @@ module.exports.setUp = (io) => {
                 games[data.id].player2.turn = 2;
                 updateBoardopponent(games[data.id].player2, move , games[data.id].gameboard[2], data.value)
                 if(matchWinCondition(games[data.id].gameboard[1])){
-                    dataNew.winner = data.boardIndex;
+                    dataNew.winner = games[data.id].player1.score > games[data.id].player2.score ? 1:2;
                     const time = new Date();
                     end_data.write(`${data.id},${time}\n`);
                    
@@ -243,7 +243,7 @@ module.exports.setUp = (io) => {
                 games[data.id].player1.turn = 2;
                 updateBoardopponent(games[data.id].player1, move, games[data.id].gameboard[1], data.value)
                 if(matchWinCondition(games[data.id].gameboard[2])){
-                    dataNew.winner = data.boardIndex;
+                    dataNew.winner = games[data.id].player1.score > games[data.id].player2.score ? 1:2;
                     const time = new Date();
                     end_data.write(`${data.id},${time}\n`);
                 }
